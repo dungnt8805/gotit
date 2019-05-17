@@ -1,0 +1,12 @@
+import os
+from dotenv import load_dotenv, find_dotenv
+
+from src.app import create_app
+
+load_dotenv(find_dotenv())
+
+app = create_app()
+
+if __name__ == '__main__':
+    port = os.getenv('PORT')
+    app.run(host='0.0.0.0', port=port)
