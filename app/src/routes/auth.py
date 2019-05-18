@@ -59,7 +59,7 @@ def google_authorized():
         return custom_response({'error': "Authenticate failed"}, 401)
     google = get_google_auth(token=token)
     resp = google.get(GoogleAuth.USER_INFO)
-    if resp.status_code != 200
+    if resp.status_code != 200:
         return custom_response({'error': "Authenticate failed"}, 401)
     user_data = resp.json()
     email = user_data['email']
